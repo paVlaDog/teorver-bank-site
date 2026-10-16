@@ -1,0 +1,1187 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Закрытый банк задач по теории вероятностей">
+      
+      
+        <meta name="author" content="Практики теорвера">
+      
+      
+        <link rel="canonical" href="https://pavladog.github.io/teorver-bank-site/topics/pgf-kompoziciya/">
+      
+      
+        <link rel="prev" href="../pgf-summy/">
+      
+      
+        <link rel="next" href="../pgf-momenty/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Преобразования ПФ: композиция - Теорвер — банк задач</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Теорвер — банк задач" class="md-header__button md-logo" aria-label="Теорвер — банк задач" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Теорвер — банк задач
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Преобразования ПФ: композиция
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Теорвер — банк задач" class="md-nav__button md-logo" aria-label="Теорвер — банк задач" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Теорвер — банк задач
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    О банке
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sobytiya/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    События
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kombinatorika/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Комбинаторика
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uslovnaya/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Условная вероятность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nezavisimost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Независимость
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bayes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Полная вероятность и формула Байеса
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../momenty-vychislenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Вычисление моментов Д.С.В.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../momenty-svoystva/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Свойства моментов Д.С.В.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bolshie-chisla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Задачи на большие числа
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../padenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Падение объекта в область
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../razbienie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Задачи на разбиение объекта
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vstrecha/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Задача о встрече и вариации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fizika/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Физические задачи
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geom-prochee/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Прочие задачи на геометрическую вероятность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ispolzovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Использование известных дискретных распределений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../harakteristiki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Вычисление характеристик известных дискретных распределений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../svoystva-raspredeleniy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Свойства известных дискретных распределений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vyvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Вывод новых дискретных распределений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../potok/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Простейший поток событий
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pgf-raskrytie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Раскрытие закрытого вида
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pgf-summy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Преобразования ПФ: сдвиги, растяжения и суммы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Преобразования ПФ: композиция
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pgf-momenty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Вычисления моментов в ПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pgf-izvestnye/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ПФ известных распределений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pgf-predely/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пределы в ПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pgf-prochee/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Прочее про ПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practices/p07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практика 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practices/p08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практика 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practices/p09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практика 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practices/p10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практика 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div id="mkdocs-encrypted-content" style="display:none">H15IRYgWvLV+jE0PtWsQ1g==;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</div>
+<div id="mkdocs-decrypted-content" style="display:none">
+    <form id="mkdocs-decrypt-form" class="md-content__inner md-typeset">
+        <h1>This content is protected with AES encryption. </h1>
+        <p>Contact your administrator for access to this page.</p>
+        <input class="md-input" type="password" id="mkdocs-content-password" placeholder="Password">
+        
+        <p id="mkdocs-decrypt-msg"></p>
+    </form>
+</div>
+
+<script type="text/javascript">
+var encryptcontent_id = "encryptcontent_1";
+var encryptcontent_path = "teorver-bank-site/topics/pgf-kompoziciya/";
+var decryption_failure_message = "Invalid password.";
+var encryptcontent_keystore = ["eROMUVUZhaoBTsQTeL9d5A==;TWesbh22LqqyofmOd3M1eM6yJK7vGxKFBSx2UpvUAPnDPB/8KslEr49Ud4BVlcDmJdWxw9U9GiGK9b3EG+8n43CmCdfpIfpVwEY3NabUMdhDyXpioz47/2SUfZvy5Pbx;14Ev0jmVcpa0LXHOBA+aeQ=="];
+var encryptcontent_obfuscate = 0;
+
+const encryptcontent_event = new Event("encryptcontent_event");
+var encryptcontent_done = false;
+</script>
+<script type="module">
+if (!window.hasOwnProperty("init_decryptor")) {
+    import("../../assets/javascripts/decrypt-contents.js");
+} else {
+    init_decryptor();
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tracking", "navigation.sections", "navigation.expand", "navigation.top", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

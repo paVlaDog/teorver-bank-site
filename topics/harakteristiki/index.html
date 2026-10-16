@@ -1,0 +1,1187 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Закрытый банк задач по теории вероятностей">
+      
+      
+        <meta name="author" content="Практики теорвера">
+      
+      
+        <link rel="canonical" href="https://pavladog.github.io/teorver-bank-site/topics/harakteristiki/">
+      
+      
+        <link rel="prev" href="../ispolzovanie/">
+      
+      
+        <link rel="next" href="../svoystva-raspredeleniy/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Вычисление характеристик известных дискретных распределений - Теорвер — банк задач</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Теорвер — банк задач" class="md-header__button md-logo" aria-label="Теорвер — банк задач" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Теорвер — банк задач
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Вычисление характеристик известных дискретных распределений
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Теорвер — банк задач" class="md-nav__button md-logo" aria-label="Теорвер — банк задач" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Теорвер — банк задач
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    О банке
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sobytiya/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    События
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kombinatorika/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Комбинаторика
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uslovnaya/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Условная вероятность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nezavisimost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Независимость
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bayes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Полная вероятность и формула Байеса
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../momenty-vychislenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Вычисление моментов Д.С.В.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../momenty-svoystva/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Свойства моментов Д.С.В.
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bolshie-chisla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Задачи на большие числа
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../padenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Падение объекта в область
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../razbienie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Задачи на разбиение объекта
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vstrecha/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Задача о встрече и вариации
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fizika/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Физические задачи
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geom-prochee/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Прочие задачи на геометрическую вероятность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ispolzovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Использование известных дискретных распределений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Вычисление характеристик известных дискретных распределений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../svoystva-raspredeleniy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Свойства известных дискретных распределений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vyvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Вывод новых дискретных распределений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../potok/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Простейший поток событий
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pgf-raskrytie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Раскрытие закрытого вида
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pgf-summy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Преобразования ПФ: сдвиги, растяжения и суммы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pgf-kompoziciya/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Преобразования ПФ: композиция
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pgf-momenty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Вычисления моментов в ПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pgf-izvestnye/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ПФ известных распределений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pgf-predely/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пределы в ПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pgf-prochee/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Прочее про ПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practices/p07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практика 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practices/p08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практика 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practices/p09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практика 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practices/p10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Практика 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div id="mkdocs-encrypted-content" style="display:none">OpggXPfUQmH4fiqyDOEBhg==;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</div>
+<div id="mkdocs-decrypted-content" style="display:none">
+    <form id="mkdocs-decrypt-form" class="md-content__inner md-typeset">
+        <h1>This content is protected with AES encryption. </h1>
+        <p>Contact your administrator for access to this page.</p>
+        <input class="md-input" type="password" id="mkdocs-content-password" placeholder="Password">
+        
+        <p id="mkdocs-decrypt-msg"></p>
+    </form>
+</div>
+
+<script type="text/javascript">
+var encryptcontent_id = "encryptcontent_1";
+var encryptcontent_path = "teorver-bank-site/topics/harakteristiki/";
+var decryption_failure_message = "Invalid password.";
+var encryptcontent_keystore = ["eROMUVUZhaoBTsQTeL9d5A==;TWesbh22LqqyofmOd3M1eM6yJK7vGxKFBSx2UpvUAPnDPB/8KslEr49Ud4BVlcDmJdWxw9U9GiGK9b3EG+8n43CmCdfpIfpVwEY3NabUMdhDyXpioz47/2SUfZvy5Pbx;14Ev0jmVcpa0LXHOBA+aeQ=="];
+var encryptcontent_obfuscate = 0;
+
+const encryptcontent_event = new Event("encryptcontent_event");
+var encryptcontent_done = false;
+</script>
+<script type="module">
+if (!window.hasOwnProperty("init_decryptor")) {
+    import("../../assets/javascripts/decrypt-contents.js");
+} else {
+    init_decryptor();
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tracking", "navigation.sections", "navigation.expand", "navigation.top", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
